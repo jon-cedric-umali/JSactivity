@@ -7,3 +7,17 @@ const movies = [
 ];
 
 // Start coding here...
+const recommend = (movie, minRating = 8) => {
+  return movie.rating >= minRating;
+};
+
+const recommendedMovies = movies.filter(movie => recommend(movie));
+
+const movieList = recommendedMovies.map(movie => 
+  `${movie.title} (${movie.genre}) - ${movie.rating} ⭐`
+);
+
+console.log("Recommended Movies:");
+movieList.forEach(title => console.log(title));
+
+
